@@ -222,8 +222,12 @@ function editPhoto() {
     var imgEl = document.createElement('img');
     imgEl.src = '../img/Ocean.jpg';
     $('#canvas2').append(imgEl);
+    var c = $('#canvas2')
+    /*var img = Caman($('#canvas2'), "../img/" + 'Ocean' + ".jpg", function() {
+        this.render();
+    });*/
 
-    var img = Caman($('#canvas2'), "../img/" + 'Ocean' + ".jpg", function() {
+    var img = Caman('#canvas2', imgEl.src, function() {
         this.render();
     });
 
@@ -249,7 +253,6 @@ function editPhoto() {
 
     $('#photo_selector').change(function () {
         var text = $("#photo_selector option:selected").text();
-        //text = text[0].toLowerCase()
         $("#canvas2").removeAttr("data-caman-id");
 
         img = Caman("#canvas2", "../img/" + text + ".jpg", function() {
