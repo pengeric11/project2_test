@@ -247,7 +247,7 @@ function editPhoto() {
     /*var img = Caman($('#canvas2'), "../img/" + 'Ocean' + ".jpg", function() {
         this.render();
     });*/
-    image.onload = function (ev) {
+    window.onload = function (ev) {
         var img = Caman('#canvas2', image.src, function () {
             this.render();
         });
