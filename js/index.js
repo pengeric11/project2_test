@@ -215,12 +215,22 @@ $('ul.tabs li a').click(function(obj){
     }
 });
 
+window.onload = function () {
+    var images = [];
+    var image = new Image();
+    image.src = '../img/Ocean.jpg';
+    images.push(image);
+    console.log(images);
+};
+
 function editPhoto() {
 
     var palette = ['#69d2e7','#a7dbd8','#e0e4cc','#f38630','#fa6900'];
 
     var imgEl = document.createElement('img');
     imgEl.src = '../img/Ocean.jpg';
+    //base_image = new Image();
+
     $('#canvas2').append(imgEl);
     var c = $('#canvas2')
     /*var img = Caman($('#canvas2'), "../img/" + 'Ocean' + ".jpg", function() {
