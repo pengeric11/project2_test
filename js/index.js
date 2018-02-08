@@ -231,7 +231,7 @@ function editPhoto() {
 
     var images = [];
     var image = new Image();
-    image.src = '../img/Ocean.jpg';
+    image.src = '../img/Flowers.jpg';
     images.push(image);
     console.log(images);
 
@@ -247,10 +247,11 @@ function editPhoto() {
     /*var img = Caman($('#canvas2'), "../img/" + 'Ocean' + ".jpg", function() {
         this.render();
     });*/
-
-    var img = Caman('#canvas2', image.src, function() {
-        this.render();
-    });
+    image.onload = function (ev) {
+        var img = Caman('#canvas2', image.src, function () {
+            this.render();
+        });
+    };
 
     $('input[type=range]').change(applyFilters);
 
