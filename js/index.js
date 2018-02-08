@@ -221,9 +221,20 @@ window.onload = function () {
     image.src = '../img/Ocean.jpg';
     images.push(image);
     console.log(images);
+    //$('body').append(image);
+    var img = Caman('#canvas2', image, function() {
+        this.render();
+    });
 };
 
 function editPhoto() {
+
+    var images = [];
+    var image = new Image();
+    image.src = '../img/Ocean.jpg';
+    images.push(image);
+    console.log(images);
+
 
     var palette = ['#69d2e7','#a7dbd8','#e0e4cc','#f38630','#fa6900'];
 
@@ -232,12 +243,12 @@ function editPhoto() {
     //base_image = new Image();
 
     $('#canvas2').append(imgEl);
-    var c = $('#canvas2')
+    //var c = $('#canvas2')
     /*var img = Caman($('#canvas2'), "../img/" + 'Ocean' + ".jpg", function() {
         this.render();
     });*/
 
-    var img = Caman('#canvas2', imgEl.src, function() {
+    var img = Caman('#canvas2', image.src, function() {
         this.render();
     });
 
