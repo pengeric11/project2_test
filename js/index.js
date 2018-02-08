@@ -219,7 +219,11 @@ function editPhoto() {
 
     var palette = ['#69d2e7','#a7dbd8','#e0e4cc','#f38630','#fa6900'];
 
-    var img = Caman("#canvas2", "../img/" + 'Ocean' + ".jpg", function() {
+    var imgEl = document.createElement('img');
+    imgEl.src = '../img/Ocean.jpg';
+    $('#canvas2').append(imgEl);
+
+    var img = Caman($('#canvas2'), "../img/" + 'Ocean' + ".jpg", function() {
         this.render();
     });
 
